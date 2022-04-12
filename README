@@ -1,7 +1,7 @@
-Utilize um codigo em python em seu programa C.
+# Utilize um codigo em python em seu programa C.
 
 Especialmente util para usar algum legado em python ou aproveitar a facilidade de utilizar o python para algum prototipo dentro do seu sistema em C
 
-para compilar:
+# para compilar:
 
 gcc main.cpp -I /usr/local/Cellar/python@3.9/3.9.10/Frameworks/Python.framework/Versions/3.9/include/python3.9 -L/usr/local/Cellar/python@3.9/3.9.10/Frameworks/Python.framework/Versions/3.9/lib -lpython3.9 -lstdc++   -o test

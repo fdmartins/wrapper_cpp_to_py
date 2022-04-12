@@ -8,7 +8,7 @@
 using namespace std;
 
 
-// PyObject -> Vector
+// utilitario para converter PyObject -> Vector
 vector<float> listTupleToVector_Float(PyObject* incoming) {
 	vector<float> data;
 	if (PyTuple_Check(incoming)) {
@@ -48,7 +48,7 @@ int main() {
     PyObject* my_function = PyObject_GetAttrString(my_module,"create_list");
 
     
-    // enviamos para sum
+    // enviamos para a funcao o valor 10.
     int arg = 10;
 
     PyObject* arglist = Py_BuildValue("(i)", arg); // tipos=> https://docs.python.org/release/1.5.2p2/ext/buildValue.html
@@ -58,8 +58,10 @@ int main() {
     //double result = PyFloat_AsDouble(my_result);
     //printf("%d My result is :  %f\n", i, result);
 
+    // convertemos o retorno (lista) em um vetor do C++
     vector<float> data =  listTupleToVector_Float(my_result);
 
+    // imprimimos.
     cout << "A seguinte lista foi criada no python e retornada:" << endl;
     for(int i=0; i<data.size(); i++){
         printf("%f ", data[i]);
